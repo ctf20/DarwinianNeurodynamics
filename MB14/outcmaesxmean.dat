@@ -1,0 +1,3 @@
+% # columns="iteration, evaluation, void, void, void, xmean", seed=425356, Sun Jan 27 14:51:16 2013 # scaling_of_variables: 1, typical_x: 0
+0 0 0 0 0 1.71842589029 0.0519040464074
+1 7 0 0.0 nan 1.70303728902 0.120250722876

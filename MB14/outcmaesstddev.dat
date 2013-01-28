@@ -1,0 +1,3 @@
+% # columns=["iteration, evaluation, sigma, void, void,  stds==sigma*sqrt(diag(C))", seed=425356, Sun Jan 27 14:51:16 2013
+0 1 0.1 0 0 0.0999999805399 0.0999999943988
+1 7 0.0902829511745 0 0 0.0794056445717 0.087411330159
