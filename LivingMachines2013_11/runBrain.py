@@ -6,7 +6,6 @@ import pickle
 import pprint
 from actorClass import actorClass
 
-
 #PYTHON SCRIPT FOR RUNNING DARWINIAN NEURODYNAMICS
 
 # Create a local broker
@@ -14,7 +13,7 @@ from naoqi import *
 LOCALBROKER_NAME="localbroker"
 LOCALBROKER_IP="0.0.0.0" # listen on all available interfaces
 LOCALBROKER_PORT=9560
-PARENTBROKER_IP=  "ctf.local" #"naoFernando.local"
+PARENTBROKER_IP=  "192.168.1.69" # "vera.local" #"naoFernando.local"
 PARENTBROKER_PORT=9559
 broker=ALBroker(LOCALBROKER_NAME,LOCALBROKER_IP,LOCALBROKER_PORT,PARENTBROKER_IP,PARENTBROKER_PORT)
 TRIAL_TIME = 10
@@ -43,9 +42,9 @@ from basicMotorFunctionClass import basicMotorFunctionClass
 global bmf
 bmf = basicMotorFunctionClass("bmf")
 
-from drawMolClass import drawMolClass
-global drawMol
-drawMol = drawMolClass("drawMol")
+#from drawMolClass import drawMolClass
+#global drawMol
+#drawMol = drawMolClass("drawMol")
 
 NUM_EXPERIMENTS = 1000000
 EXPERIMENTS_PER_GENERATION = 1
@@ -97,13 +96,13 @@ def runMicrobialGA():
             actorPopulation.exclusiveActivate(leastTestedActiveActor)
 #            actorPopulation.exclusiveActivate(0)
 
-            drawMol.updateMoleculeInit(leastTestedActiveActor, actorPopulation.actors) 
+ #           drawMol.updateMoleculeInit(leastTestedActiveActor, actorPopulation.actors) 
             for t in range(TRIAL_TIME):
  #               print " " + str(t)
  #               time.sleep(0.001)
                 actorPopulation.runActiveActors()
                 actorPopulation.conditionalActivate()
-                drawMol.updateMolecule(actorPopulation.actors)
+  #              drawMol.updateMolecule(actorPopulation.actors)
                 gamePopulation.storeObservedMessages()
                
 
@@ -180,14 +179,14 @@ def getFitness(s):
             bmf.rest()
             gamePopulation.clearMessageHistories()
             actorPopulation.exclusiveActivate(leastTestedActiveActor)
-            drawMol.updateMoleculeInit(leastTestedActiveActor, actorPopulation.actors) 
+   #         drawMol.updateMoleculeInit(leastTestedActiveActor, actorPopulation.actors) 
             for t in range(TRIAL_TIME):
  #               print "getFitness " + str(t)
  #               time.sleep(0.001)
                 actorPopulation.runActiveActors()
                 actorPopulation.conditionalActivate()
                 gamePopulation.storeObservedMessages()
-                drawMol.updateMolecule(actorPopulation.actors)
+    #            drawMol.updateMolecule(actorPopulation.actors)
  
             currentMol = actorPopulation.recordMolecule()
             if currentMol != s:

@@ -13,7 +13,7 @@ class gamePopulationClass(ALModule):
         ALModule.__init__(self,name)
         self.isRunning=True
         self.mm = ALProxy("memoryManager")
-        game0 = gameClass(nameA = "game", count = 0, messages = list(range(0,100*3,3)), function = "sum")
+        game0 = gameClass(nameA = "game", count = 0, messages = list(range(0,10*3,3)), function = "sum")
         self.games = [game0]
         
     def clearMessageHistories(self):

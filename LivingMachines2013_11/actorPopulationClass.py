@@ -18,7 +18,7 @@ class actorPopulationClass(ALModule):
   def __init__(self,name, kind, from_file):
     ALModule.__init__(self,name)
     self.isRunning=True
-    self.MAX_POP_SIZE = 5
+    self.MAX_POP_SIZE = 10
     self.mm = ALProxy("memoryManager")
     self.games = ALProxy("gamePopulation")
     self.totalCount = 0

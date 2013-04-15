@@ -9,7 +9,8 @@ class basicMotorFunctionClass(ALModule):
   def __init__(self,name):
     ALModule.__init__(self,name)
     self.isRunning=True
-    self.motion = ALProxy("ALMotion", "ctf.local", 9559)
+    #self.motion = ALProxy("ALMotion", "192.168.1.69", 9559)
+    self.motion = ALProxy("ALMotion")
     self.Body = self.motion.getLimits("Body")
     self.set_stiffness(1.0)
 
